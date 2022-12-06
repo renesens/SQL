@@ -1,94 +1,94 @@
 -- Output all fields and all rows.
 select * from students;
 
--- ¬ывести всех студентов в таблице
+-- Output all students in the table
 select name from students;
 
---¬ывести только Id пользователей
+--Output only Id users
 select id from students;
 
--- ¬ывести только email пользователей
+-- Output users' emails only
 select email from students;
 
--- ¬ывести им€ и email пользователей
+-- Display name and email of users
 select name, email  from students;
 
--- ¬ывести id, им€, email и дату создани€ пользователей
+-- Output users' id, name, email and creation date
 select id, name, email, created_on  from students;
 
--- ¬ывести пользователей где password 12333
+-- Output users where password 12333
 select * from students where password = '12333';
 
--- ¬ывести пользователей которые были созданы 2021-03-26 00:00:00
+-- Output users who were created 2021-03-26 00:00:00
 select name from students where created_on = '2021-03-26 00:00:00';
 
---  ¬ывести пользователей где в имени есть слово јнна
+--  Display users with the word Anna in their name
 select name from students where name like '%Anna%';
 
--- ¬ывести пользователей где в имени в конце есть 8
+-- Output users with an 8 at the end of their name
 select name from students where name like '%8';
 
---¬ывести пользователей где в имени в есть буква а
+--Output users with the letter a in their name
 select name from students where name like '%a%';
 
--- ¬ывести пользователей которые были созданы 2021-07-12 00:00:00
+-- Output users who were created 2021-07-12 00:00:00
 select name from students where created_on='2021-07-12 00:00:00';
 
--- ¬ывести пользователей которые были созданы 2021-07-12 00:00:00 и имеют пароль 1m313
+-- Display users who were created 2021-07-12 00:00:00 and have a password of 1m313
 select name from students where created_on='2021-07-12 00:00:00' and password='1m313';
 
---  ¬ывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть слово Andrey
+--  Display the users who were created 2021-07-12 00:00:00 and who have the word Andrey in their name
 select name from students where created_on='2021-07-12 00:00:00' and name like '%Andrey%';
 
--- ¬ывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть цифра 8
+-- Display users who were created 2021-07-12 00:00:00 and who have a number 8 in their name
 select name from students where created_on='2021-07-12 00:00:00' and name like '%8%';
 
--- 17. ¬ывести пользовател€ у которых id равен 110
+-- Output the user whose id is 110
 select * from students where id='110';
 
--- 18. ¬ывести пользовател€ у которых id равен 153
+-- Output the user whose id is 153
 select * from students where id='153';
 
--- 19. ¬ывести пользовател€ у которых id больше 140
+--  Display users with an id greater than 140
 select * from students where id>140;
 
--- 20. ¬ывести пользовател€ у которых id меньше 130
+-- Output the user whose id is less than 130
 select * from students where id<130;
 
--- 21. ¬ывести пользовател€ у которых id меньше 127 или больше 188
+--  Display users with an id less than 127 or greater than 188
 select * from students where id < 127 or id > 188;
 
--- 22. ¬ывести пользовател€ у которых id меньше либо равно 137
+--  Output the user whose id is less than or equal to 137
 select * from students where id <= 137;
 
--- 23. ¬ывести пользовател€ у которых id больше либо равно 137
+-- Output the user with an id greater than or equal to 137
 select * from students where id >= 137;
 
--- 24. ¬ывести пользовател€ у которых id больше 180 но меньше 190
+-- Display users with an id greater than 180 but less than 190
 select * from students where id > 180 and id < 190;
 
--- 25. ¬ывести пользовател€ у которых id между 180 и 190
+--  Output the user whose id is between 180 and 190
 select * from students where id between 180 and 190;
 
--- 26. ¬ывести пользователей где password равен 12333, 1m313, 123313
+-- Output users where password is 12333, 1m313, 123313
 select name,password from students where password in ('12333', '1m313', '123313');
 
--- 27. ¬ывести пользователей где created_on равен 2020-10-03 00:00:00, 2021-05-19 00:00:00, 2021-03-26 00:00:00
+-- Output users where created_on is 2020-10-03 00:00:00, 2021-05-19 00:00:00, 2021-03-26 00:00:00
 select name, created_on from students where created_on in ('2020-10-03 00:00:00', '2021-05-19 00:00:00', '2021-03-26 00:00:00');
 
--- 28. ¬ывести минимальный id
+--  Output the minimum id
 select MIN(id) from students;
 
--- 29. ¬ывести максимальный.
+-- Output the maximum.
 select MAX(id) from students;
 
--- 30. ¬ывести количество пользователей
+-- Output the number of users
 select count(name) from students;
 
--- 31. ¬ывести id пользовател€, им€, дату создани€ пользовател€. ќтсортировать по пор€дку возрастани€ даты добавлени€ пользоватлел€.
+-- Output user id, name, date the user was created. Sort in ascending order of the date the user was added.
 select id, name, created_on from students order by created_on ;
 
--- 32. ¬ывести id пользовател€, им€, дату создани€ пользовател€. ќтсортировать по пор€дку убывани€ даты добавлени€ пользоватлел€.
+-- Output user id, name, date the user was created. Sort in descending order of the date the user was added.
 select id, name, created_on from students order by created_on desc ;
 
 
